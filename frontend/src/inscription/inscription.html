@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="../index.html" class="header-brand">Café</a>
+        <ul>
+          <li><a href="../index.html" class="header-nav">Accueil</a></li>
+          <li>
+            <a href="./inscription.html" class="header-nav active"
+              >Inscription</a
+            >
+          </li>
+          <li>
+            <a href="../connexion/connexion.html" class="header-nav"
+              >Connexion</a
+            >
+          </li>
+        </ul>
+      </header>
+      <div class="content">
+        <form data-type="signup">
+          <h2 class="title-underline">Créer un compte</h2>
+          <div class="form-group">
+            <label>Nom complet</label>
+            <input type="text" name="nom" required />
+          </div>
+          <div class="form-group">
+            <label>Adresse courriel</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" name="motdepasse" required />
+          </div>
+          <div class="form-group">
+            <label>Confirmer le mot de passe</label>
+            <input type="password" name="confirmerMotdepasse" required />
+          </div>
+          <ul class="text-error" id="errors"></ul>
+          <div class="form-btn-container">
+            <button type="reset" class="btn btn-secondary">Annuler</button>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+          </div>
+        </form>
+      </div>
+      <footer>Tous droits réservés - Toréva 2025</footer>
+    </div>
+    <script type="module" src="./inscription.js"></script>
+  </body>
+</html>

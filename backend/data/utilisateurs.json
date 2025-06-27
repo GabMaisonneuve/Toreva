@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "username": "coffeeLover92",
+    "email": "coffeelover92@example.com",
+    "password": "password123",
+    "role": "user"
+  },
+  {
+    "id": 2,
+    "username": "baristaQueen",
+    "email": "barista@example.com",
+    "password": "latteArt456",
+    "role": "admin"
+  },
+  {
+    "id": 3,
+    "username": "javaJoe",
+    "email": "joe@example.com",
+    "password": "beanbrew789",
+    "role": "user"
+  },
+  {
+    "id": 4,
+    "username": "espressoMaster",
+    "email": "espresso@example.com",
+    "password": "strongcoffee!",
+    "role": "user"
+  }
+]

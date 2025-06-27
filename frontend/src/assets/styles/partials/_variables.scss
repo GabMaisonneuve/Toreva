@@ -1,0 +1,30 @@
+:root {
+  /* Main rich espresso brown - great for headers, main buttons, brand logos */
+  --primary: #4b2e2b;
+
+  /* Soft warm cream - ideal for backgrounds, large content areas, cards */
+  --background: #f6e6d7;
+
+  /* Light coffee foam beige - perfect for highlights, hover states, subtle accents */
+  --accent: #d9b99b;
+
+  /* Dark chocolate brown - good for footer backgrounds, nav bars, text on light backgrounds */
+  --dark: #3a1f1ce1;
+
+  /* Warm medium brown - great for secondary buttons, borders, dividers */
+  --medium-brown: #8c5e49;
+
+  /* Text color for body text and headings - clean and readable on light backgrounds */
+  --text: #3b2f2f;
+
+  /* Soft warm gray for subtle borders, dividers, and backgrounds of small UI elements */
+  --divider: #e4d6c3;
+
+  --border: #bbb;
+
+  /* Shadow to add depth - use on cards, modals, buttons */
+  --box-shadow: 0 4px 6px rgba(75, 46, 43, 0.3);
+
+  /* Font family for cozy, friendly, readable text */
+  --font-family: "Montserrat", "Poppins", sans-serif;
+}
