@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Espresso Shot",
+    "name": "Espresso Shot test",
     "description": "A rich and bold single shot of espresso made from freshly ground beans.",
-    "price": 2.5,
+    "price": "2.5",
     "image": "./assets/images/espresso.png",
-    "category": "Espresso"
+    "category": "Espresso",
+    "dateMiseAJour": "2025-07-04T17:49:15.941Z"
   },
   {
     "id": 2,
@@ -112,11 +113,14 @@
     "category": "Classic"
   },
   {
-    "id": 15,
-    "name": "Café au Lait",
-    "description": "Equal parts brewed coffee and steamed milk.",
-    "price": 3.9,
-    "image": "./assets/images/cafe_au_lait.png",
-    "category": "Milk-Based"
+    "name": "cafe test",
+    "category": "Classic",
+    "price": 32,
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+    "description": "daftggaerthgyaerthygaetrhy",
+    "id": "0197d248-2158-7458-8f52-ce036109ebe8",
+    "createdAt": "2025-07-03T21:53:51.960Z",
+    "updatedAt": "2025-07-03T21:53:51.960Z",
+    "dateMiseAJour": "2025-07-04T19:02:28.469Z"
   }
 ]

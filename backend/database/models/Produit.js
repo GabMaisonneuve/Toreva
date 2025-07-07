@@ -39,4 +39,8 @@ export default class Produit {
   static async suppressionProduit(id) {
     return dbProduit.delete(id);
   }
+
+  static async findAll() {
+    return dbProduit.findAll();
+  }
 }

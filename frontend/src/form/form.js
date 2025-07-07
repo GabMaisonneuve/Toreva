@@ -2,39 +2,59 @@ import "../assets/styles/styles.scss";
 import "./form.scss";
 
 import "../assets/styles/styles.scss";
+import { addItem } from "../../javascript/api.js";
+import { modifyItem } from "../../javascript/api.js";
+import { fetchSingleProduct } from "../../javascript/api.js";
 
 const form = document.querySelector("form");
 const errorList = document.querySelector("#errors");
 
-// Event listener on form submit
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const data = new FormData(form);
   const product = Object.fromEntries(data.entries());
+  product.price = parseFloat(product.price);
 
   const validationResult = checkProductForm(product);
-  if (validationResult.valid) {
-    const json = JSON.stringify(product);
-    console.log("Produit prêt à être envoyé :", json);
-    // Fetch POST or file write can go here
-  } else {
+  if (!validationResult.valid) {
     showErrors(validationResult.errors);
+    return;
+  }
+
+  if (productId) {
+    product.id = productId;
+    const message = await modifyItem(productId, product);
+    if (message === "Item modifié avec succès") {
+      window.location.href = "../index.html";
+    } else {
+      showErrors([message]);
+    }
+    return;
+  }
+
+  // Add mode
+  const message = await addItem(product);
+  if (message === "Item ajouté avec succès") {
+    form.reset();
+    errorList.innerHTML = "";
+  } else {
+    showErrors([message]);
   }
 });
 
-// Custom function to validate product form
 function checkProductForm(product) {
   const errors = [];
 
-  if (!product.nom?.trim()) {
+  if (!product.name || product.name.trim() === "") {
     errors.push("Le nom du produit est requis.");
   }
 
-  if (!product.marque?.trim()) {
+  if (!product.category || product.category.trim() === "") {
     errors.push("La marque du produit est requise.");
   }
 
-  if (!product.image?.trim()) {
+  if (!product.image || product.image.trim() === "") {
     errors.push("L'image est requise (nom du fichier ou URL).");
   }
 
@@ -42,7 +62,7 @@ function checkProductForm(product) {
     errors.push("La description doit contenir au moins 20 caractères.");
   }
 
-  const priceCheck = isValidPrice(product.prix);
+  const priceCheck = isValidPrice(product.price);
   if (priceCheck !== true) {
     errors.push(priceCheck);
   }
@@ -53,7 +73,7 @@ function checkProductForm(product) {
   };
 }
 
-// Price validation helper
+//Utilisation chatGPT pour le regex
 function isValidPrice(value) {
   if (!value) return "Le prix est requis.";
   if (!/^\d+(\.\d{1,2})?$/.test(value))
@@ -64,7 +84,20 @@ function isValidPrice(value) {
   return true;
 }
 
-// Display errors in the HTML
 function showErrors(messages) {
   errorList.innerHTML = messages.map((msg) => `<li>${msg}</li>`).join("");
+}
+
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+if (productId) {
+  const product = await fetchSingleProduct(productId);
+
+  document.querySelector('input[name="name"]').value = product.name;
+  document.querySelector('input[name="category"]').value = product.category;
+  document.querySelector('input[name="image"]').value = product.image;
+  document.querySelector('textarea[name="description"]').value =
+    product.description;
+  document.querySelector('input[name="price"]').value = product.price;
 }

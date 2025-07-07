@@ -6,7 +6,10 @@ import {
   obtenirUnProduit,
   modificationProduit,
   suppressionProduit,
+  obtenirTousProduits,
 } from "../controllers/produit.js";
+
+router.get("/", obtenirTousProduits);
 
 // POST / - Créer un produit
 router.post("/", creerProduit);

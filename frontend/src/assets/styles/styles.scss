@@ -55,3 +55,9 @@ footer {
   text-align: center;
   color: var(--background);
 }
+
+.bouton__supprimmer:hover,
+.bouton__modifier:hover {
+  background-color: var(--background);
+  color: var(--dark);
+}

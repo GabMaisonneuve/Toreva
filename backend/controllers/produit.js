@@ -41,3 +41,12 @@ export const suppressionProduit = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const obtenirTousProduits = async (req, res) => {
+  try {
+    const produits = await Produit.findAll();
+    res.json(produits);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
