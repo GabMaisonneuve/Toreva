@@ -1,0 +1,31 @@
+p,
+h2 {
+  color: var(--dark);
+}
+
+.remove-btn {
+  padding: 10px 20px;
+  background-color: var(--dark);
+  color: var(--background);
+}
+
+.remove-btn:hover {
+  background-color: var(--border);
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--divider);
+}
+
+#total-price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text);
+  margin-top: 20px;
+}

@@ -1,12 +1,12 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Espresso Shot test",
     "description": "A rich and bold single shot of espresso made from freshly ground beans.",
-    "price": "2.5",
+    "price": 2.5,
     "image": "./assets/images/espresso.png",
     "category": "Espresso",
-    "dateMiseAJour": "2025-07-04T17:49:15.941Z"
+    "dateMiseAJour": "2025-07-10T18:18:51.121Z"
   },
   {
     "id": 2,
@@ -17,12 +17,13 @@
     "category": "Milk-Based"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Latte",
     "description": "Smooth and creamy, made with espresso and steamed milk.",
     "price": 4.5,
     "image": "./assets/images/latte.png",
-    "category": "Milk-Based"
+    "category": "Milk-Based",
+    "dateMiseAJour": "2025-07-10T18:18:55.166Z"
   },
   {
     "id": 4,
